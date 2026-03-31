@@ -1,0 +1,105 @@
+[
+  {
+    "id": "stock-market-prediction",
+    "title": "Stock Market Prediction App",
+    "description": "AI-powered financial forecasting using LSTM neural networks and NLP sentiment analysis. Real-time data feeds, interactive candlestick charts, and portfolio risk scoring.",
+    "tags": [
+      {"label": "Python", "color": "default"},
+      {"label": "TensorFlow", "color": "pink"},
+      {"label": "React", "color": "purple"},
+      {"label": "PostgreSQL", "color": "yellow"},
+      {"label": "FastAPI", "color": "default"},
+      {"label": "Pandas", "color": "pink"}
+    ],
+    "links": {"github": "#", "demo": "#"},
+    "size": "wide",
+    "accent": "default",
+    "featured": true,
+    "order": 1,
+    "source": "manual"
+  },
+  {
+    "id": "neural-visualizer",
+    "title": "Neural Visualizer",
+    "description": "Interactive 3D visualization of neural network architectures with live training metrics and layer-by-layer activation heatmaps rendered in WebGL.",
+    "tags": [
+      {"label": "Three.js", "color": "purple"},
+      {"label": "WebGL", "color": "default"},
+      {"label": "PyTorch", "color": "pink"},
+      {"label": "WASM", "color": "yellow"}
+    ],
+    "links": {"github": "#", "demo": "#"},
+    "size": "compact",
+    "accent": "pink",
+    "featured": false,
+    "order": 2,
+    "source": "manual"
+  },
+  {
+    "id": "devcollab",
+    "title": "DevCollab",
+    "description": "Real-time collaborative code editor with video chat, shared terminals, and AI pair-programming assistant powered by the Claude API.",
+    "tags": [
+      {"label": "WebRTC", "color": "default"},
+      {"label": "Socket.io", "color": "pink"},
+      {"label": "Redis", "color": "yellow"}
+    ],
+    "links": {"demo": "#"},
+    "size": "narrow",
+    "accent": "purple",
+    "featured": false,
+    "order": 3,
+    "source": "manual"
+  },
+  {
+    "id": "cryptoscan",
+    "title": "CryptoScan",
+    "description": "Blockchain explorer and DeFi analytics dashboard. Tracks wallet activity, smart contract events, and on-chain market trends in real time.",
+    "tags": [
+      {"label": "Web3.js", "color": "purple"},
+      {"label": "GraphQL", "color": "pink"},
+      {"label": "Solidity", "color": "default"}
+    ],
+    "links": {"github": "#"},
+    "size": "narrow",
+    "accent": "default",
+    "featured": false,
+    "order": 4,
+    "source": "manual"
+  },
+  {
+    "id": "aiscript",
+    "title": "AIscript",
+    "description": "VS Code extension using Claude API for context-aware code generation, explanation, and automated refactoring across 20+ languages.",
+    "tags": [
+      {"label": "Claude API", "color": "pink"},
+      {"label": "TypeScript", "color": "default"},
+      {"label": "VS Code", "color": "yellow"}
+    ],
+    "links": {"demo": "#"},
+    "size": "narrow",
+    "accent": "pink",
+    "featured": false,
+    "order": 5,
+    "source": "manual"
+  },
+  {
+    "id": "fluxdb",
+    "title": "FluxDB",
+    "description": "A blazing-fast distributed time-series database written in Rust, optimised for high-frequency financial data ingestion. Handles 1M+ writes/sec with sub-millisecond query latency using Raft consensus and columnar storage.",
+    "tags": [
+      {"label": "Rust", "color": "purple"},
+      {"label": "gRPC", "color": "default"},
+      {"label": "Raft Consensus", "color": "pink"},
+      {"label": "WASM", "color": "yellow"},
+      {"label": "Columnar Storage", "color": "default"},
+      {"label": "SIMD", "color": "purple"}
+    ],
+    "links": {"github": "#", "docs": "#"},
+    "size": "full",
+    "accent": "purple",
+    "featured": false,
+    "order": 6,
+    "source": "manual"
+  }
+]
