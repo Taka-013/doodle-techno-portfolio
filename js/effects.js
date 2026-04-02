@@ -1,14 +1,79 @@
-// Visual effects: cursor, typing, scroll reveal, count-up, nav, parallax
+// Visual effects: page transitions, cursor, typing, scroll reveal, count-up, nav, parallax
 const Effects = {
   _revealObs: null,
 
   init() {
+    this.initPageLoader();
+    this.initNavTransitions();
     this.initCursor();
     this.initTyping();
     this.initScrollReveal();
     this.initCountUp();
     this.initActiveNav();
     this.initDoodleParallax();
+    this.initSmoothSections();
+  },
+
+  /* ── Page load curtain ── */
+  initPageLoader() {
+    const loader = document.getElementById('page-loader');
+    if (!loader) return;
+
+    const dismiss = () => {
+      setTimeout(() => {
+        loader.classList.add('done');
+        document.querySelectorAll('#hero .hero-inner > *').forEach((el, i) => {
+          el.style.animationDelay = (0.1 + i * 0.08) + 's';
+        });
+      }, 600);
+      setTimeout(() => loader.remove(), 1300);
+    };
+
+    if (document.readyState === 'complete') {
+      dismiss();
+    } else {
+      window.addEventListener('load', dismiss);
+    }
+  },
+
+  /* ── Nav click smooth transition ── */
+  initNavTransitions() {
+    const wipe = document.getElementById('nav-wipe');
+    if (!wipe) return;
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+
+        // Flash the wipe overlay
+        wipe.classList.add('active');
+
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+          wipe.classList.remove('active');
+        }, 200);
+      });
+    });
+  },
+
+  /* ── Smooth section scroll tracking ── */
+  initSmoothSections() {
+    const sections = document.querySelectorAll('section[id]');
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle('active-section', entry.isIntersecting);
+      });
+    }, { threshold: 0.15 });
+
+    sections.forEach(s => {
+      s.classList.add('section-highlight');
+      sectionObs.observe(s);
+    });
   },
 
   refreshHovers() {
@@ -87,7 +152,7 @@ const Effects = {
       const grid = el.closest('.projects-grid, .skills-grid, .about-stats, .socials');
       if (grid) {
         const siblings = Array.from(grid.querySelectorAll('.reveal'));
-        el.dataset.delay = siblings.indexOf(el) * 75;
+        el.dataset.delay = siblings.indexOf(el) * 80;
       }
       this._revealObs.observe(el);
     });

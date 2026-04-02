@@ -21,6 +21,17 @@
   </defs>
 </svg>
 
+<!-- Page load transition -->
+<div class="page-loader" id="page-loader">
+  <div class="loader-inner">
+    <div class="loader-text">{ loading portfolio }</div>
+    <div class="loader-bar"></div>
+  </div>
+</div>
+
+<!-- Nav transition wipe overlay -->
+<div class="nav-wipe" id="nav-wipe"></div>
+
 <div class="noise"></div>
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
@@ -108,7 +119,7 @@
       <br>
       <a href="#contact" class="btn" style="margin-top:0.8rem">say hello &rarr;</a>
     </div>
-    <div class="about-stats reveal">
+    <div class="about-stats reveal from-right">
       <div class="stat-card">
         <span class="stat-num" data-count="50">0</span>
         <div class="stat-lbl">projects shipped</div>
@@ -161,7 +172,7 @@
 
 <!-- ═══════════ PROJECTS (rendered dynamically by JS) ═══════════ -->
 <section id="projects">
-  <div class="s-head reveal">
+  <div class="s-head reveal from-scale">
     <div class="s-tag">// 03 — selected_work</div>
     <h2 class="s-title">What I've Built</h2>
   </div>
@@ -170,11 +181,11 @@
 
 <!-- ═══════════ CONTACT ═══════════ -->
 <section id="contact">
-  <div class="s-head reveal">
+  <div class="s-head reveal from-scale">
     <div class="s-tag">// 04 — get_in_touch</div>
     <h2 class="s-title">Let's Build Something</h2>
   </div>
-  <div class="reveal" style="text-align:center">
+  <div class="reveal from-scale" style="text-align:center">
     <p class="contact-sub">Got an idea? Need a collaborator? Want to talk tech or just say hi? My inbox is always open.</p>
     <a href="mailto:hello@yourname.dev" class="contact-email">hello@yourname.dev</a>
     <div class="socials">
