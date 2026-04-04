@@ -97,13 +97,15 @@ const Effects = {
 
     document.addEventListener('mousemove', e => {
       mx = e.clientX; my = e.clientY;
-      cur.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+      cur.style.setProperty('--cx', (mx - 4) + 'px');
+      cur.style.setProperty('--cy', (my - 4) + 'px');
     });
 
     (function tick() {
       rx += (mx - rx) * 0.11;
       ry += (my - ry) * 0.11;
-      ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+      ring.style.setProperty('--rx', (rx - 16) + 'px');
+      ring.style.setProperty('--ry', (ry - 16) + 'px');
       requestAnimationFrame(tick);
     })();
 
@@ -207,7 +209,7 @@ const Effects = {
       const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
       const dx = (e.clientX - cx) / cx, dy = (e.clientY - cy) / cy;
       document.querySelectorAll('.doodle').forEach((d, i) => {
-        const depth = (i + 1) * 9;
+        const depth = (i + 1) * 8;
         d.style.transform = `translate(${dx * depth}px, ${dy * depth}px)`;
       });
     }, { passive: true });
